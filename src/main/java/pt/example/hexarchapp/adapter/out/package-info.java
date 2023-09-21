@@ -1,1 +1,0 @@
-package pt.example.hexarchapp.adapter.out;
