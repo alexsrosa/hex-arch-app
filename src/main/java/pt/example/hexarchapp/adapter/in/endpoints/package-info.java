@@ -1,0 +1,1 @@
+package pt.example.hexarchapp.adapter.in.endpoints;
