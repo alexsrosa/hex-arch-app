@@ -23,7 +23,7 @@ import pt.example.hexarchapp.domains.enuns.CustomerTypeEnum;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table( name = "customer" )
+@Table( name = "customers" )
 public class CustomerData {
 
 	@Id

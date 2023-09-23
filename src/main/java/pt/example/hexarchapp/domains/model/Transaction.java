@@ -1,6 +1,7 @@
 package pt.example.hexarchapp.domains.model;
 
 import lombok.Data;
+import pt.example.hexarchapp.domains.enuns.TransactionTypeEnum;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -10,7 +11,7 @@ public class Transaction {
 
 	private Long id;
 
-	private String transactionType;
+	private TransactionTypeEnum transactionType;
 
 	private BigDecimal amount;
 

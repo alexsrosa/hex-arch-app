@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 import pt.example.hexarchapp.adapters.output.persistence.mappers.AccountMapper;
 import pt.example.hexarchapp.adapters.output.persistence.repository.AccountJPARepository;
 import pt.example.hexarchapp.application.ports.output.AccountOutputPort;
+import pt.example.hexarchapp.domains.enuns.AccountTypeEnum;
 import pt.example.hexarchapp.domains.model.Account;
 
 import java.util.Optional;
@@ -28,10 +29,17 @@ public class AccountOutputAdapter implements AccountOutputPort {
 	}
 
 	@Override public Optional<Account> findByAccountNumber( String accountNumber ) {
-		return Optional.empty();
+		return accountJPARepository.findByAccountNumber( accountNumber )
+				.map( accountMapper::toDomain );
 	}
 
 	@Override public Optional<Account> findByCustomerId( Long customerId ) {
-		return Optional.empty();
+		return accountJPARepository.findByCustomer_Id( customerId )
+				.map( accountMapper::toDomain );
+	}
+
+	@Override public Optional<Account> changeAccountType( Long id, AccountTypeEnum accountType ) {
+		return accountJPARepository.changeAccountType( id, accountType )
+				.map( accountMapper::toDomain );
 	}
 }

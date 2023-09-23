@@ -20,7 +20,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table( name = "account" )
+@Table( name = "accounts" )
 public class AccountData {
 
 	@Id
@@ -46,8 +46,8 @@ public class AccountData {
 	private AccountStatusEnum accountStatus;
 
 	@ManyToOne
-	@JoinColumn( name = "id", nullable = false, updatable = false )
-	private CustomerData customerId;
+	@JoinColumn( name = "customerId", nullable = false, updatable = false )
+	private CustomerData customer;
 
 	@OneToMany
 	private Set<TransactionData> transactions;

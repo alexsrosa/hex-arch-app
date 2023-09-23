@@ -1,0 +1,36 @@
+server:
+  port: ${SERVER_PORT:8118}
+  servlet.context-path: ${BASE_PATH:/}
+
+spring:
+  datasource:
+    driverClassName: org.h2.Driver
+    password: password
+    url: jdbc:h2:mem:testdb
+    username: sa
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+
+  #
+  # Flyway configurations
+  # Flyway can be tuned using the available properties.
+  # Check: https://flywaydb.org/documentation/configfiles
+  #
+  flyway:
+    enabled: ${FLYWAY_ENABLED}
+    #
+    # Disable clean action. If enable the Flyway removes all
+    # data and tables from target database
+    #
+    clean-disabled: true
+
+    #
+    # Target schema
+    #
+    schemas: ${PG_SCHEMA}
+    #
+    # `classpath:db/migration` is the default.
+    # A folder in filesystem can be configured.
+    #
+    locations:
+      - classpath:db/migration

@@ -1,17 +1,15 @@
-package pt.example.hexarchapp.domains.model;
+package pt.example.hexarchapp.application.usecases.data.commands;
 
 import lombok.Data;
 import pt.example.hexarchapp.domains.enuns.AccountStatusEnum;
 import pt.example.hexarchapp.domains.enuns.AccountTypeEnum;
+import pt.example.hexarchapp.domains.model.Customer;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.Set;
 
 @Data
-public class Account {
-
-	private Long id;
+public class CreateAccountCommand {
 
 	private String accountNumber;
 
@@ -27,5 +25,4 @@ public class Account {
 
 	private Customer customerId;
 
-	private Set<Transaction> transactions;
 }
