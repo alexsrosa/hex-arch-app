@@ -34,7 +34,7 @@ services:
       - RABBITMQ_DEFAULT_PASS=password
     volumes:
       - ./.data:/var/lib/rabbitmq
-      #platform: linux/arm64/v8
+    platform: linux/arm64/v8
     networks:
       - backend
 
