@@ -2,11 +2,14 @@ package pt.example.hexarchapp.adapters.output.persistence.data;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -18,6 +21,7 @@ import java.time.LocalDate;
 
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -28,26 +32,29 @@ public class PersonData {
 	@GeneratedValue( strategy = GenerationType.IDENTITY )
 	private Long id;
 
-	@Column( nullable = false )
+	@Column( nullable = false, length = 50)
 	private String firstName;
 
-	@Column( nullable = false )
+	@Column( nullable = false, length = 150)
 	private String lastName;
 
 	@Column( nullable = false )
 	private LocalDate dateOfBirth;
 
-	@Column( nullable = false )
+	@Column( nullable = false, length = 150)
 	private String email;
 
-	@Column( nullable = false )
+	@Column( nullable = false, length = 15)
 	private String phoneNumber;
 
-	@Column( nullable = false )
+	@Column( nullable = false, length = 150)
 	private String address;
 
-	@Column( nullable = false )
+	@Column( nullable = false, length = 15)
 	private String taxIdentifier;
+
+	@OneToOne
+	private CustomerData customer;
 
 	@Override public boolean equals( Object o ) {
 		if ( this == o )

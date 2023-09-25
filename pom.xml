@@ -17,6 +17,7 @@
         <java.version>17</java.version>
         <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
         <org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
+        <postgresql.version>42.6.0</postgresql.version>
     </properties>
     <dependencies>
         <dependency>
@@ -30,6 +31,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${postgresql.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -124,8 +130,11 @@
                 <groupId>org.flywaydb</groupId>
                 <artifactId>flyway-maven-plugin</artifactId>
                 <configuration>
+                    <url>jdbc:postgresql://localhost:5432/hex</url>
+                    <driver>org.postgresql.Driver</driver>
                     <user>user_hex_admin</user>
                     <password>HeX123@</password>
+                    <cleanDisabled>false</cleanDisabled>
                     <schemas>
                         <schema>hex</schema>
                     </schemas>

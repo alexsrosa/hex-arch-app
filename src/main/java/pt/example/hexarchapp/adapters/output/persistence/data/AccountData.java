@@ -1,7 +1,19 @@
 package pt.example.hexarchapp.adapters.output.persistence.data;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,75 +25,84 @@ import pt.example.hexarchapp.domains.enuns.AccountTypeEnum;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.Set;
 
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table( name = "accounts" )
+@Table(name = "accounts")
 public class AccountData {
 
-	@Id
-	@GeneratedValue( strategy = GenerationType.IDENTITY )
-	private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	@Column( nullable = false, unique = true )
-	private String accountNumber;
+    @Column(nullable = false, unique = true, length = 15)
+    private String accountNumber;
 
-	@Enumerated( EnumType.STRING )
-	@Column( nullable = false )
-	private AccountTypeEnum accountType;
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false, length = 15)
+    private AccountTypeEnum accountType;
 
-	private BigDecimal currentBalance;
+    @Builder.Default
+    @Column(nullable = false)
+    private BigDecimal currentBalance = BigDecimal.ZERO;
 
-	@Column( nullable = false )
-	private LocalDate dataOpened;
+    @Builder.Default
+    @Column(nullable = false)
+    private LocalDate dataOpened = LocalDate.now();
 
-	private LocalDate dateClosed;
+    private LocalDate dateClosed;
 
-	@Enumerated( EnumType.STRING )
-	@Column( nullable = false )
-	private AccountStatusEnum accountStatus;
+    @Builder.Default
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false, length = 6)
+    private AccountStatusEnum accountStatus = AccountStatusEnum.OPENED;
 
-	@ManyToOne
-	@JoinColumn( name = "customerId", nullable = false, updatable = false )
-	private CustomerData customer;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "customerId", nullable = false, updatable = false)
+    private CustomerData customer;
 
-	@OneToMany
-	private Set<TransactionData> transactions;
+    @OneToMany(mappedBy = "account", fetch = FetchType.LAZY)
+    private Set<TransactionData> transactions = new HashSet<>(0);
 
-	@Override public boolean equals( Object o ) {
-		if ( this == o )
-			return true;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
 
-		if ( o == null || getClass() != o.getClass() )
-			return false;
+        if (o == null || getClass() != o.getClass())
+            return false;
 
-		AccountData that = (AccountData) o;
+        AccountData that = (AccountData) o;
 
-		return new EqualsBuilder().append( id, that.id )
-				.append( accountNumber, that.accountNumber ).append( accountType, that.accountType )
-				.append( currentBalance, that.currentBalance ).append( dataOpened, that.dataOpened )
-				.append( dateClosed, that.dateClosed ).append( accountStatus, that.accountStatus ).isEquals();
-	}
+        return new EqualsBuilder().append(id, that.id)
+                .append(accountNumber, that.accountNumber).append(accountType, that.accountType)
+                .append(currentBalance, that.currentBalance).append(dataOpened, that.dataOpened)
+                .append(dateClosed, that.dateClosed).append(accountStatus, that.accountStatus).isEquals();
+    }
 
-	@Override public int hashCode() {
-		return new HashCodeBuilder( 17, 37 ).append( id ).append( accountNumber ).append( accountType )
-				.append( currentBalance ).append( dataOpened ).append( dateClosed ).append( accountStatus )
-				.toHashCode();
-	}
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder(17, 37).append(id).append(accountNumber).append(accountType)
+                .append(currentBalance).append(dataOpened).append(dateClosed).append(accountStatus)
+                .toHashCode();
+    }
 
-	@Override public String toString() {
-		return new ToStringBuilder( this )
-				.append( "id", id )
-				.append( "accountNumber", accountNumber )
-				.append( "accountType", accountType )
-				.append( "currentBalance", currentBalance )
-				.append( "dataOpened", dataOpened )
-				.append( "dateClosed", dateClosed )
-				.append( "accountStatus", accountStatus )
-				.toString();
-	}
+    @Override
+    public String toString() {
+        return new ToStringBuilder(this)
+                .append("id", id)
+                .append("accountNumber", accountNumber)
+                .append("accountType", accountType)
+                .append("currentBalance", currentBalance)
+                .append("dataOpened", dataOpened)
+                .append("dateClosed", dateClosed)
+                .append("accountStatus", accountStatus)
+                .toString();
+    }
 }

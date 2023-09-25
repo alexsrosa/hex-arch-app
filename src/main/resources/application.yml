@@ -4,33 +4,57 @@ server:
 
 spring:
   datasource:
-    driverClassName: org.h2.Driver
-    password: password
-    url: jdbc:h2:mem:testdb
-    username: sa
+
+    ## With Postgres
+    driverClassName: org.postgresql.Driver
+    username: user_hex_app
+    password: HeX123@
+    url: jdbc:postgresql://localhost:5432/hex
+
+    ## With H2
+    # driverClassName: org.h2.Driver
+    # username: sa
+    # password: password
+    # url: jdbc:h2:mem:testdb
+
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
-
-  #
+    open-in-view: true
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
   # Flyway configurations
   # Flyway can be tuned using the available properties.
   # Check: https://flywaydb.org/documentation/configfiles
   #
   flyway:
-    enabled: ${FLYWAY_ENABLED}
+    enabled: ${FLYWAY_ENABLED:true}
     #
     # Disable clean action. If enable the Flyway removes all
     # data and tables from target database
     #
-    clean-disabled: true
+    clean-disabled: false
 
     #
     # Target schema
     #
-    schemas: ${PG_SCHEMA}
+    schemas: ${PG_SCHEMA:hex}
     #
     # `classpath:db/migration` is the default.
     # A folder in filesystem can be configured.
     #
     locations:
       - classpath:db/migration
+
+    ## For Postgres Database
+    user: user_hex_admin
+    password: HeX123@
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: user
+    password: password
+
