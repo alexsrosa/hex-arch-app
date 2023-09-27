@@ -1,5 +1,6 @@
 package pt.example.hexarchapp.adapters.input.endpoints;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import pt.example.hexarchapp.application.usecases.FetchAccountUseCase;
 import pt.example.hexarchapp.domains.model.Account;
 
+@Tag(name = "Accounts")
 @RequiredArgsConstructor
 @RestController
 @RequestMapping( value = "/accounts" )
