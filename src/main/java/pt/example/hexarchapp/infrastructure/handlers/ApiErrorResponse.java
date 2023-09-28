@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 @Data
 @Builder
-public class ErrorResponse {
+public class ApiErrorResponse {
 
 	@Builder.Default
 	private LocalDateTime time = LocalDateTime.now();
