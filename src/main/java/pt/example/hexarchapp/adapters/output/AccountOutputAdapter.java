@@ -1,9 +1,9 @@
-package pt.example.hexarchapp.adapters.output.persistence;
+package pt.example.hexarchapp.adapters.output;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import pt.example.hexarchapp.adapters.output.persistence.mappers.AccountMapper;
-import pt.example.hexarchapp.adapters.output.persistence.repository.AccountJPARepository;
+import pt.example.hexarchapp.adapters.output.persistence.AccountJPARepository;
 import pt.example.hexarchapp.application.ports.output.AccountOutputPort;
 import pt.example.hexarchapp.domains.enuns.AccountTypeEnum;
 import pt.example.hexarchapp.domains.model.Account;
@@ -15,7 +15,6 @@ import java.util.Optional;
 public class AccountOutputAdapter implements AccountOutputPort {
 
 	private final AccountJPARepository accountJPARepository;
-
 	private final AccountMapper accountMapper;
 
 	@Override public Optional<Account> save( Account account ) {

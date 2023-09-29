@@ -1,17 +1,27 @@
 package pt.example.hexarchapp.application.usecases.data.commands;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import pt.example.hexarchapp.domains.enuns.TransactionTypeEnum;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
-public class CreateTransactionCommand {
+public class CreateTransactionCommand implements Serializable {
 
-    private TransactionTypeEnum transactionType;
+	@Serial private static final long serialVersionUID = 2581164337817466479L;
 
-    private BigDecimal amount;
+	private TransactionTypeEnum transactionType;
 
-    private LocalDateTime transactionDate;
+	private BigDecimal amount;
+
+	private LocalDateTime transactionDate;
 }

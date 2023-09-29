@@ -1,15 +1,25 @@
 package pt.example.hexarchapp.application.usecases.data.commands;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import pt.example.hexarchapp.domains.enuns.AccountStatusEnum;
 import pt.example.hexarchapp.domains.enuns.AccountTypeEnum;
 import pt.example.hexarchapp.domains.model.Customer;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
-public class CreateAccountCommand {
+public class CreateAccountCommand implements Serializable {
+
+	@Serial private static final long serialVersionUID = -8257045172456614231L;
 
 	private String accountNumber;
 

@@ -1,9 +1,9 @@
-package pt.example.hexarchapp.adapters.output.persistence;
+package pt.example.hexarchapp.adapters.output;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import pt.example.hexarchapp.adapters.output.persistence.mappers.CustomerMapper;
-import pt.example.hexarchapp.adapters.output.persistence.repository.CustomerJPARepository;
+import pt.example.hexarchapp.adapters.output.persistence.CustomerJPARepository;
 import pt.example.hexarchapp.application.ports.output.CustomerOutputPort;
 import pt.example.hexarchapp.domains.model.Customer;
 
@@ -14,7 +14,6 @@ import java.util.Optional;
 public class CustomerOutputAdapter implements CustomerOutputPort {
 
 	private final CustomerJPARepository customerJPARepository;
-
 	private final CustomerMapper customerMapper;
 
 	@Override public Optional<Customer> save( Customer customer ) {
