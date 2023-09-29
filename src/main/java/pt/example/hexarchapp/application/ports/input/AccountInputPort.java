@@ -11,7 +11,7 @@ import pt.example.hexarchapp.application.usecases.mappers.AccountUseCaseMapper;
 import pt.example.hexarchapp.domains.enuns.AccountStatusEnum;
 import pt.example.hexarchapp.domains.enuns.AccountTypeEnum;
 import pt.example.hexarchapp.domains.exceptions.AccountAlreadyClosedException;
-import pt.example.hexarchapp.domains.exceptions.AccountNotFoundException;
+import pt.example.hexarchapp.domains.exceptions.NotFoundException;
 import pt.example.hexarchapp.domains.model.Account;
 
 import java.time.LocalDate;
@@ -22,40 +22,46 @@ import java.util.Optional;
 @Service
 public class AccountInputPort implements SupportsAccountUseCase, FetchAccountUseCase {
 
-	private final AccountOutputPort accountOutputPort;
+    public static final String ACCOUNT_NOT_FOUND = "Account Not Found";
 
-	private final AccountUseCaseMapper accountUseCaseMapper;
+    private final AccountOutputPort accountOutputPort;
 
-	@Override public Optional<Account> create( CreateAccountCommand createAccountCommand ) {
-		return accountOutputPort.save( accountUseCaseMapper.toData( createAccountCommand ) );
-	}
+    private final AccountUseCaseMapper accountUseCaseMapper;
 
-	@Override public Optional<Account> changeAccountType( Long id, AccountTypeEnum accountType ) {
-		return accountOutputPort.changeAccountType( id, accountType );
-	}
+    @Override
+    public Optional<Account> create(CreateAccountCommand createAccountCommand) {
+        return accountOutputPort.save(accountUseCaseMapper.toData(createAccountCommand));
+    }
 
-	@Transactional
-	@Override
-	public Optional<Account> changeAccountStatus( Long id, AccountStatusEnum accountStatus ) {
-		Account account = accountOutputPort.findById( id )
-				.orElseThrow( AccountNotFoundException::new );
+    @Override
+    public Optional<Account> changeAccountType(Long id, AccountTypeEnum accountType) {
+        return accountOutputPort.changeAccountType(id, accountType);
+    }
 
-		if ( Objects.equals( AccountStatusEnum.CLOSED, account.getAccountStatus() ) ) {
-			throw new AccountAlreadyClosedException();
-		}
+    @Transactional
+    @Override
+    public Optional<Account> changeAccountStatus(Long id, AccountStatusEnum accountStatus) {
+        Account account = accountOutputPort.findById(id)
+                .orElseThrow(() -> new NotFoundException(ACCOUNT_NOT_FOUND));
 
-		account.setAccountStatus( accountStatus );
-		account.setDateClosed( AccountStatusEnum.CLOSED.equals( accountStatus ) ? LocalDate.now() : null );
+        if (Objects.equals(AccountStatusEnum.CLOSED, account.getAccountStatus())) {
+            throw new AccountAlreadyClosedException();
+        }
 
-		return accountOutputPort.save( account );
-	}
+        account.setAccountStatus(accountStatus);
+        account.setDateClosed(AccountStatusEnum.CLOSED.equals(accountStatus) ? LocalDate.now() : null);
 
-	@Override public Optional<Account> findById( Long id ) {
-		return Optional.ofNullable( accountOutputPort.findById( id )
-				.orElseThrow( AccountNotFoundException::new ) );
-	}
+        return accountOutputPort.save(account);
+    }
 
-	@Override public Optional<Account> findByAccountNumber( String accountNumber ) {
-		return accountOutputPort.findByAccountNumber( accountNumber );
-	}
+    @Override
+    public Optional<Account> findById(Long id) {
+        return Optional.ofNullable(accountOutputPort.findById(id)
+                .orElseThrow(() -> new NotFoundException(ACCOUNT_NOT_FOUND)));
+    }
+
+    @Override
+    public Optional<Account> findByAccountNumber(String accountNumber) {
+        return accountOutputPort.findByAccountNumber(accountNumber);
+    }
 }

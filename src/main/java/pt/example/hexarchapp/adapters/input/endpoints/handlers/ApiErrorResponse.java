@@ -1,4 +1,4 @@
-package pt.example.hexarchapp.infrastructure.handlers;
+package pt.example.hexarchapp.adapters.input.endpoints.handlers;
 
 import lombok.Builder;
 import lombok.Data;
@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 @Data
 @Builder
-public class ErrorResponse {
+public class ApiErrorResponse {
 
 	@Builder.Default
 	private LocalDateTime time = LocalDateTime.now();

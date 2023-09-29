@@ -7,7 +7,7 @@ import pt.example.hexarchapp.application.usecases.FetchCustomerUseCase;
 import pt.example.hexarchapp.application.usecases.SupportsCustomerUseCase;
 import pt.example.hexarchapp.application.usecases.data.commands.CreateCustomerCommand;
 import pt.example.hexarchapp.application.usecases.mappers.CustomerUseCaseMapper;
-import pt.example.hexarchapp.domains.exceptions.AccountNotFoundException;
+import pt.example.hexarchapp.domains.exceptions.NotFoundException;
 import pt.example.hexarchapp.domains.model.Customer;
 
 import java.util.Optional;
@@ -15,6 +15,8 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @Service
 public class CustomerInputPort implements SupportsCustomerUseCase, FetchCustomerUseCase {
+
+    public static final String CUSTOMER_NOT_FOUND = "Customer Not Found";
 
     private final CustomerOutputPort customerOutputPort;
 
@@ -28,6 +30,6 @@ public class CustomerInputPort implements SupportsCustomerUseCase, FetchCustomer
     @Override
     public Optional<Customer> findById(Long id) {
         return Optional.ofNullable(customerOutputPort.findById(id)
-                .orElseThrow(AccountNotFoundException::new));
+                .orElseThrow(() -> new NotFoundException(CUSTOMER_NOT_FOUND)));
     }
 }
