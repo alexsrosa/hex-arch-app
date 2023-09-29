@@ -1,4 +1,4 @@
-package pt.example.hexarchapp.infrastructure.handlers;
+package pt.example.hexarchapp.adapters.input.endpoints.handlers;
 
 import lombok.Builder;
 import lombok.Data;
