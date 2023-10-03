@@ -1,6 +1,6 @@
 package pt.example.hexarchapp.application.usecases;
 
-import pt.example.hexarchapp.domains.model.Customer;
+import pt.example.hexarchapp.domain.model.Customer;
 
 import java.util.Optional;
 

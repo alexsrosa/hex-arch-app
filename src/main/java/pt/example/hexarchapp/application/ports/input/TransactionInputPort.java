@@ -7,8 +7,8 @@ import pt.example.hexarchapp.application.usecases.FetchTransactionUseCase;
 import pt.example.hexarchapp.application.usecases.SupportsTransactionUseCase;
 import pt.example.hexarchapp.application.usecases.data.commands.CreateTransactionCommand;
 import pt.example.hexarchapp.application.usecases.mappers.TransactionUseCaseMapper;
-import pt.example.hexarchapp.domains.exceptions.NotFoundException;
-import pt.example.hexarchapp.domains.model.Transaction;
+import pt.example.hexarchapp.domain.exceptions.NotFoundException;
+import pt.example.hexarchapp.domain.model.Transaction;
 
 import java.util.Optional;
 

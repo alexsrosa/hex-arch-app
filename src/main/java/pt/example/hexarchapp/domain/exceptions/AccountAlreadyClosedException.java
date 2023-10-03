@@ -1,4 +1,4 @@
-package pt.example.hexarchapp.domains.exceptions;
+package pt.example.hexarchapp.domain.exceptions;
 
 public class AccountAlreadyClosedException extends GenericException {
 

@@ -1,7 +1,7 @@
 package pt.example.hexarchapp.application.ports.output;
 
-import pt.example.hexarchapp.domains.enuns.AccountTypeEnum;
-import pt.example.hexarchapp.domains.model.Account;
+import pt.example.hexarchapp.domain.enuns.AccountTypeEnum;
+import pt.example.hexarchapp.domain.model.Account;
 
 import java.util.Optional;
 

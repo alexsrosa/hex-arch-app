@@ -8,7 +8,7 @@ import pt.example.hexarchapp.adapters.output.persistence.mappers.PersonMapper;
 import pt.example.hexarchapp.adapters.output.persistence.PersonJPARepository;
 import pt.example.hexarchapp.adapters.output.producers.PersonEventProducer;
 import pt.example.hexarchapp.application.ports.output.PersonOutputPort;
-import pt.example.hexarchapp.domains.model.Person;
+import pt.example.hexarchapp.domain.model.Person;
 
 import java.util.Optional;
 

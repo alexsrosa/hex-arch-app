@@ -20,8 +20,8 @@ import lombok.Setter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
-import pt.example.hexarchapp.domains.enuns.AccountStatusEnum;
-import pt.example.hexarchapp.domains.enuns.AccountTypeEnum;
+import pt.example.hexarchapp.domain.enuns.AccountStatusEnum;
+import pt.example.hexarchapp.domain.enuns.AccountTypeEnum;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

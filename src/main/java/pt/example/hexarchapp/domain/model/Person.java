@@ -1,4 +1,4 @@
-package pt.example.hexarchapp.domains.model;
+package pt.example.hexarchapp.domain.model;
 
 import lombok.Data;
 

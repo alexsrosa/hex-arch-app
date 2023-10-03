@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pt.example.hexarchapp.application.usecases.FetchTransactionUseCase;
-import pt.example.hexarchapp.domains.model.Transaction;
+import pt.example.hexarchapp.domain.model.Transaction;
 
 @Tag(name = "Transactions")
 @RequiredArgsConstructor

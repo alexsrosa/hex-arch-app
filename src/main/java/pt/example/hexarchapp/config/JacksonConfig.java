@@ -1,4 +1,4 @@
-package pt.example.hexarchapp.infrastructure.config;
+package pt.example.hexarchapp.config;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;

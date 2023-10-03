@@ -1,8 +1,8 @@
-package pt.example.hexarchapp.domains.model;
+package pt.example.hexarchapp.domain.model;
 
 import lombok.Data;
-import pt.example.hexarchapp.domains.enuns.AccountStatusEnum;
-import pt.example.hexarchapp.domains.enuns.AccountTypeEnum;
+import pt.example.hexarchapp.domain.enuns.AccountStatusEnum;
+import pt.example.hexarchapp.domain.enuns.AccountTypeEnum;
 
 import java.io.Serial;
 import java.io.Serializable;

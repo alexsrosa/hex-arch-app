@@ -8,11 +8,11 @@ import pt.example.hexarchapp.application.usecases.FetchAccountUseCase;
 import pt.example.hexarchapp.application.usecases.SupportsAccountUseCase;
 import pt.example.hexarchapp.application.usecases.data.commands.CreateAccountCommand;
 import pt.example.hexarchapp.application.usecases.mappers.AccountUseCaseMapper;
-import pt.example.hexarchapp.domains.enuns.AccountStatusEnum;
-import pt.example.hexarchapp.domains.enuns.AccountTypeEnum;
-import pt.example.hexarchapp.domains.exceptions.AccountAlreadyClosedException;
-import pt.example.hexarchapp.domains.exceptions.NotFoundException;
-import pt.example.hexarchapp.domains.model.Account;
+import pt.example.hexarchapp.domain.enuns.AccountStatusEnum;
+import pt.example.hexarchapp.domain.enuns.AccountTypeEnum;
+import pt.example.hexarchapp.domain.exceptions.AccountAlreadyClosedException;
+import pt.example.hexarchapp.domain.exceptions.NotFoundException;
+import pt.example.hexarchapp.domain.model.Account;
 
 import java.time.LocalDate;
 import java.util.Objects;

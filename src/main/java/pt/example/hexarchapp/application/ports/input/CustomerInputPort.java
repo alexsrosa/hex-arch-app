@@ -7,8 +7,8 @@ import pt.example.hexarchapp.application.usecases.FetchCustomerUseCase;
 import pt.example.hexarchapp.application.usecases.SupportsCustomerUseCase;
 import pt.example.hexarchapp.application.usecases.data.commands.CreateCustomerCommand;
 import pt.example.hexarchapp.application.usecases.mappers.CustomerUseCaseMapper;
-import pt.example.hexarchapp.domains.exceptions.NotFoundException;
-import pt.example.hexarchapp.domains.model.Customer;
+import pt.example.hexarchapp.domain.exceptions.NotFoundException;
+import pt.example.hexarchapp.domain.model.Customer;
 
 import java.util.Optional;
 

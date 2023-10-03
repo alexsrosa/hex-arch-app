@@ -1,4 +1,4 @@
-package pt.example.hexarchapp.domains.enuns;
+package pt.example.hexarchapp.domain.enuns;
 
 public enum AccountStatusEnum {
 	OPENED, CLOSED;

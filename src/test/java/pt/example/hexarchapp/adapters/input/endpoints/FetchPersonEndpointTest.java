@@ -12,7 +12,7 @@ import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.web.servlet.MockMvc;
 import pt.example.hexarchapp.application.usecases.FetchPersonUseCase;
 import pt.example.hexarchapp.config.TestConfiguration;
-import pt.example.hexarchapp.domains.model.Person;
+import pt.example.hexarchapp.domain.model.Person;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.TestInstance.Lifecycle.PER_CLASS;

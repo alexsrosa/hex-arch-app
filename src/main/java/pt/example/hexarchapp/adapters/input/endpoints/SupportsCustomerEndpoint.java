@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pt.example.hexarchapp.application.usecases.SupportsCustomerUseCase;
 import pt.example.hexarchapp.application.usecases.data.commands.CreateCustomerCommand;
-import pt.example.hexarchapp.domains.model.Customer;
+import pt.example.hexarchapp.domain.model.Customer;
 
 @Tag(name = "Customers")
 @RequiredArgsConstructor

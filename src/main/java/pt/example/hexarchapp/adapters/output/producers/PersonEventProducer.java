@@ -9,7 +9,7 @@ import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Component;
 import pt.example.hexarchapp.adapters.output.producers.data.PersonMessage;
 import pt.example.hexarchapp.adapters.output.producers.mappers.PersonMessageMapper;
-import pt.example.hexarchapp.domains.model.Person;
+import pt.example.hexarchapp.domain.model.Person;
 
 import java.util.Map;
 

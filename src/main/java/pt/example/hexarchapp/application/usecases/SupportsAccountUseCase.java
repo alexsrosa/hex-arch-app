@@ -1,9 +1,9 @@
 package pt.example.hexarchapp.application.usecases;
 
 import pt.example.hexarchapp.application.usecases.data.commands.CreateAccountCommand;
-import pt.example.hexarchapp.domains.enuns.AccountStatusEnum;
-import pt.example.hexarchapp.domains.enuns.AccountTypeEnum;
-import pt.example.hexarchapp.domains.model.Account;
+import pt.example.hexarchapp.domain.enuns.AccountStatusEnum;
+import pt.example.hexarchapp.domain.enuns.AccountTypeEnum;
+import pt.example.hexarchapp.domain.model.Account;
 
 import java.util.Optional;
 

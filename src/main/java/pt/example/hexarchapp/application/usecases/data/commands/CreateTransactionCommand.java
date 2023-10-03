@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import pt.example.hexarchapp.domains.enuns.TransactionTypeEnum;
+import pt.example.hexarchapp.domain.enuns.TransactionTypeEnum;
 
 import java.io.Serial;
 import java.io.Serializable;

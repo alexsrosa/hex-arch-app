@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 import pt.example.hexarchapp.adapters.output.persistence.mappers.TransactionMapper;
 import pt.example.hexarchapp.adapters.output.persistence.TransactionJPARepository;
 import pt.example.hexarchapp.application.ports.output.TransactionOutputPort;
-import pt.example.hexarchapp.domains.model.Transaction;
+import pt.example.hexarchapp.domain.model.Transaction;
 
 import java.util.Optional;
 

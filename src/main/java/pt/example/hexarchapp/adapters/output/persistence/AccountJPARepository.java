@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import pt.example.hexarchapp.adapters.output.persistence.data.AccountData;
-import pt.example.hexarchapp.domains.enuns.AccountTypeEnum;
+import pt.example.hexarchapp.domain.enuns.AccountTypeEnum;
 
 import java.util.Optional;
 

@@ -1,7 +1,7 @@
 package pt.example.hexarchapp.adapters.input.listeners.data;
 
 import lombok.Data;
-import pt.example.hexarchapp.domains.enuns.TransactionTypeEnum;
+import pt.example.hexarchapp.domain.enuns.TransactionTypeEnum;
 
 import java.io.Serial;
 import java.io.Serializable;

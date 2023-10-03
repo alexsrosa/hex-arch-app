@@ -9,8 +9,8 @@ import pt.example.hexarchapp.application.usecases.FetchPersonUseCase;
 import pt.example.hexarchapp.application.usecases.SupportsPersonUseCase;
 import pt.example.hexarchapp.application.usecases.data.commands.CreatePersonCommand;
 import pt.example.hexarchapp.application.usecases.mappers.PersonUseCaseMapper;
-import pt.example.hexarchapp.domains.exceptions.NotFoundException;
-import pt.example.hexarchapp.domains.model.Person;
+import pt.example.hexarchapp.domain.exceptions.NotFoundException;
+import pt.example.hexarchapp.domain.model.Person;
 
 import java.util.Optional;
 

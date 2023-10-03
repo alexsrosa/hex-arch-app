@@ -5,7 +5,7 @@ import lombok.*;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
-import pt.example.hexarchapp.domains.enuns.TransactionTypeEnum;
+import pt.example.hexarchapp.domain.enuns.TransactionTypeEnum;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

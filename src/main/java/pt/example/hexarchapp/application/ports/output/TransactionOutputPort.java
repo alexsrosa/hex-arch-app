@@ -1,6 +1,6 @@
 package pt.example.hexarchapp.application.ports.output;
 
-import pt.example.hexarchapp.domains.model.Transaction;
+import pt.example.hexarchapp.domain.model.Transaction;
 
 import java.util.Optional;
 

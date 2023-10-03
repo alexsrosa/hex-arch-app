@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 import pt.example.hexarchapp.adapters.output.persistence.mappers.CustomerMapper;
 import pt.example.hexarchapp.adapters.output.persistence.CustomerJPARepository;
 import pt.example.hexarchapp.application.ports.output.CustomerOutputPort;
-import pt.example.hexarchapp.domains.model.Customer;
+import pt.example.hexarchapp.domain.model.Customer;
 
 import java.util.Optional;
 

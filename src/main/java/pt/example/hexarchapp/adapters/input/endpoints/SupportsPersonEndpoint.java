@@ -12,7 +12,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 import pt.example.hexarchapp.adapters.input.endpoints.hateoas.PersonAssembler;
 import pt.example.hexarchapp.application.usecases.SupportsPersonUseCase;
 import pt.example.hexarchapp.application.usecases.data.commands.CreatePersonCommand;
-import pt.example.hexarchapp.domains.model.Person;
+import pt.example.hexarchapp.domain.model.Person;
 
 @Tag(name = "Persons")
 @RequiredArgsConstructor

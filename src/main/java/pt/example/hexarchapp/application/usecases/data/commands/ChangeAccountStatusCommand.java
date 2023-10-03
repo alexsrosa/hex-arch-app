@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import pt.example.hexarchapp.domains.enuns.AccountStatusEnum;
+import pt.example.hexarchapp.domain.enuns.AccountStatusEnum;
 
 import java.io.Serial;
 import java.io.Serializable;

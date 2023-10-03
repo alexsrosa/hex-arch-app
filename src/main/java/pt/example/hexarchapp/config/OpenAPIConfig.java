@@ -1,4 +1,4 @@
-package pt.example.hexarchapp.infrastructure.config;
+package pt.example.hexarchapp.config;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;

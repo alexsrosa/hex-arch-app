@@ -1,7 +1,7 @@
-package pt.example.hexarchapp.domains.model;
+package pt.example.hexarchapp.domain.model;
 
 import lombok.Data;
-import pt.example.hexarchapp.domains.enuns.CustomerTypeEnum;
+import pt.example.hexarchapp.domain.enuns.CustomerTypeEnum;
 
 import java.io.Serial;
 import java.io.Serializable;

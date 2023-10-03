@@ -2,7 +2,7 @@ package pt.example.hexarchapp.application.usecases.mappers;
 
 import org.mapstruct.Mapper;
 import pt.example.hexarchapp.application.usecases.data.commands.CreateCustomerCommand;
-import pt.example.hexarchapp.domains.model.Customer;
+import pt.example.hexarchapp.domain.model.Customer;
 
 @Mapper(componentModel = "spring")
 public interface CustomerUseCaseMapper {

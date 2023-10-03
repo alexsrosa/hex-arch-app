@@ -18,7 +18,7 @@ import lombok.Setter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
-import pt.example.hexarchapp.domains.enuns.CustomerTypeEnum;
+import pt.example.hexarchapp.domain.enuns.CustomerTypeEnum;
 
 import java.util.Set;
 

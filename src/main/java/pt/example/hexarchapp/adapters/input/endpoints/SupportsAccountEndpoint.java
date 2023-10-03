@@ -13,7 +13,7 @@ import pt.example.hexarchapp.application.usecases.SupportsAccountUseCase;
 import pt.example.hexarchapp.application.usecases.data.commands.ChangeAccountStatusCommand;
 import pt.example.hexarchapp.application.usecases.data.commands.ChangeAccountTypeCommand;
 import pt.example.hexarchapp.application.usecases.data.commands.CreateAccountCommand;
-import pt.example.hexarchapp.domains.model.Account;
+import pt.example.hexarchapp.domain.model.Account;
 
 @Tag(name = "Accounts")
 @RequiredArgsConstructor

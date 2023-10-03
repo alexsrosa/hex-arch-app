@@ -1,4 +1,4 @@
-package pt.example.hexarchapp.infrastructure.config;
+package pt.example.hexarchapp.config;
 
 import org.springframework.amqp.core.AmqpAdmin;
 import org.springframework.amqp.core.Queue;

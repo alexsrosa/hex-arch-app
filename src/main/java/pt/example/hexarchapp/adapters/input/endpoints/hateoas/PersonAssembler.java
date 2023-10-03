@@ -5,7 +5,7 @@ import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.server.RepresentationModelAssembler;
 import org.springframework.stereotype.Component;
 import pt.example.hexarchapp.adapters.input.endpoints.FetchPersonEndpoint;
-import pt.example.hexarchapp.domains.model.Person;
+import pt.example.hexarchapp.domain.model.Person;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;

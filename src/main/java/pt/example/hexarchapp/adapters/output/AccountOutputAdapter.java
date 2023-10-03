@@ -5,8 +5,8 @@ import org.springframework.stereotype.Component;
 import pt.example.hexarchapp.adapters.output.persistence.mappers.AccountMapper;
 import pt.example.hexarchapp.adapters.output.persistence.AccountJPARepository;
 import pt.example.hexarchapp.application.ports.output.AccountOutputPort;
-import pt.example.hexarchapp.domains.enuns.AccountTypeEnum;
-import pt.example.hexarchapp.domains.model.Account;
+import pt.example.hexarchapp.domain.enuns.AccountTypeEnum;
+import pt.example.hexarchapp.domain.model.Account;
 
 import java.util.Optional;
 

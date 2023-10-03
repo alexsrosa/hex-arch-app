@@ -2,7 +2,7 @@ package pt.example.hexarchapp.adapters.output.persistence.mappers;
 
 import org.mapstruct.Mapper;
 import pt.example.hexarchapp.adapters.output.persistence.data.CustomerData;
-import pt.example.hexarchapp.domains.model.Customer;
+import pt.example.hexarchapp.domain.model.Customer;
 
 @Mapper(componentModel = "spring")
 public interface CustomerMapper {

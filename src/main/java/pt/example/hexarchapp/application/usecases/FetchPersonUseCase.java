@@ -2,7 +2,7 @@ package pt.example.hexarchapp.application.usecases;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import pt.example.hexarchapp.domains.model.Person;
+import pt.example.hexarchapp.domain.model.Person;
 
 import java.util.Optional;
 
