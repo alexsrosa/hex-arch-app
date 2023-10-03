@@ -7,9 +7,12 @@ OpenAPI - https://www.baeldung.com/spring-rest-openapi-documentation
 
 Error handlers - https://www.baeldung.com/global-error-handler-in-a-spring-rest-api
 
-RabbitMQ 
+RabbitMQ:
 - https://mmarcosab.medium.com/tutorial-rabbitmq-com-spring-boot-480e3a6682e6
 - https://docs.spring.io/spring-amqp/reference/html/
+
+Testcontainers:
+- https://testcontainers.com/
 
 
 @startuml

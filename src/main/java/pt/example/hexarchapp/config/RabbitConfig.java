@@ -9,9 +9,11 @@ import org.springframework.amqp.rabbit.core.RabbitAdmin;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import pt.example.hexarchapp.adapters.input.listeners.data.TransactionsMessage;
 import pt.example.hexarchapp.adapters.output.producers.data.PersonMessage;
 
+@Profile( "!test" )
 @Configuration
 @EnableRabbit
 public class RabbitConfig {
